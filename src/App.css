@@ -1,38 +1,816 @@
-.App {
-  text-align: center;
+body {
+  background-color: #ffffff;
+  line-height: 24px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+}
+.main-menu .nav-link {
+  font-size: 16px;
+  color: #555252;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  /* line-height: 94px; */
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-menu .nav-link:hover {
+  color: #6f42c1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Hover color for Home link */
+.home-link {
+  color: #555252;
+  transition: all 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Rotate arrow icon on hover */
+.home-link:hover .arrow-icon {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Ensure .mega-dropdown is the hover trigger zone */
+.mega-dropdown {
+  position: relative;
+}
+
+/* Show the mega menu on hover of either .mega-dropdown or .mega-menu */
+.mega-dropdown:hover .mega-menu,
+.mega-menu:hover {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Base styles for the mega menu */
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+  width: 780px; /* or auto, depending on your content */
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+/* Base reset: remove bullet by default */
+.mega-menu li {
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+/* Use list-style on the UL, and make LI inline-like */
+.mega-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Flex alignment for the anchor */
+.mega-menu li > a {
+  display: inline-flex; /* Inline and flex to align bullet + text */
+  align-items: center;
+  padding: 5px 0px;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+  position: relative;
+  font-size: medium;
+}
+
+/* On hover: add bullet manually using pseudo-element */
+.mega-menu li:hover > a {
+  color: #6f42c1;
+  transform: translateX(5px);
+}
+
+/* Pseudo-element for custom bullet */
+.mega-menu li:hover > a::before {
+  content: "•";
+  color: #6f42c1;
+  font-size: 32px;
+  margin-right: 8px;
+  line-height: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+/* Wrapper for Pages Mega Dropdown */
+.pages-mega-dropdown {
+  position: relative;
+}
+
+/* Show mega menu on hover */
+.pages-mega-dropdown:hover .mega-menu,
+.pages-mega-dropdown .mega-menu:hover {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Mega Menu Panel */
+.pages-mega-dropdown .mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+  width: 220px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  padding: 16px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+/* Reset list */
+.pages-mega-dropdown .mega-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Each item */
+.pages-mega-dropdown .mega-menu li {
+  transition: all 0.3s ease;
+}
+
+/* Link styling */
+.pages-mega-dropdown .mega-menu li > a {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 0;
+  color: #555;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+}
+
+/* Hover effect */
+.pages-mega-dropdown .mega-menu li:hover > a {
+  color: #6f42c1;
+  transform: translateX(5px);
+}
+
+/* Bullet icon on hover */
+.pages-mega-dropdown .mega-menu li:hover > a::before {
+  content: "•";
+  color: #6f42c1;
+  font-size: 24px;
+  margin-right: 8px;
+  line-height: 1;
+}
+
+/* Hero Section Styles */
+.heroSection {
+  background-color: #eec7d7;
+  min-height: 80vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+}
+
+.sliderBtn {
+  display: inline-block;
+}
+
+.animatedBtn {
+  display: inline-block;
+  padding: 10px 28px;
+  font-size: 16px;
   color: white;
+  background-color: #ff4da6;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.animatedBtn:hover {
+  background-color: #e60073;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes App-logo-spin {
+.fade-in-bottom {
+  animation: fadeInUp 0.9s ease both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffffcc;
+  border: none;
+  font-size: 22px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+  background-color: #ff4da6;
+  color: #fff;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/*  */
+/* Shrink width and position lower from top */
+.custom-offcanvas {
+  top: 50px; /* 👈 push down from top */
+  width: 350px;
+  height: calc(21% - 50px); /* Full height minus the top offset */
+  right: 0%;
+  /* transform: translateX(-50%) scale(0.95); */
+  border-radius: 8px;
+  background-color: #f5eaff;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+/* When shown */
+.custom-offcanvas.show {
+  transform: translateX(-35%) scale(1);
+  opacity: 1;
+}
+
+/* Search button color */
+.search-btn {
+  background-color: #b24cf7;
+  border: none;
+}
+.search-btn:hover {
+  background-color: #a239eb;
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated {
+  transition: transform 0.3s ease-in-out;
+}
+
+.animated:hover {
+  transform: scale(1.2) rotate(10deg); /* icon grows and rotates slightly on hover */
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animated {
+  animation: float 2s ease-in-out infinite;
+}
+.product-img-card {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  position: relative;
+}
+
+.product-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.product-img-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.back-img {
+  opacity: 0;
+}
+
+.product-img-wrapper:hover .back-img {
+  opacity: 1;
+}
+
+.product-img-wrapper:hover .front-img {
+  opacity: 0;
+}
+
+/* Hover Overlay Buttons */
+.overlay-btns {
+  position: absolute;
+  bottom: -50px; /* hidden initially */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.product-img-wrapper:hover .overlay-btns {
+  bottom: 10px; /* slide up */
+  opacity: 1;
+}
+
+.overlay-btns .btn {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.sale-badge {
+  background: #ff4da6;
+  z-index: 10;
+}
+
+/* Sirf image ke liye zoom effect */
+.blog-card .blog-image img {
+  width: 100%;
+  transition: transform 0.5s ease; /* smooth zoom */
+}
+
+.blog-card .blog-image:hover img {
+  transform: scale(1.1); /* hover par sirf img zoom hoga */
+}
+
+/* Badge position */
+.blog-card .badge {
+  background: #ff4da6;
+  color: #fff;
+}
+
+/* White box overlap */
+.blog-card .blog-content {
+  bottom: -40px;
+  transform: translateX(-50%);
+  width: 80%;
+  z-index: 2;
+}
+/* footer css */
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  display: inline-block;
+  color: #6c757d; /* Bootstrap muted color */
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect: Text moves right + underline appear */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #6f42c1; /* underline color */
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #6f42c1; /* text color on hover */
+  transform: translateX(5px); /* slide right */
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+.custom-subscribe-btn {
+  background-color: #6f42c1; /* apna desired color */
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.scroll-top-btn {
+  position: fixed;
+  bottom: -80px; /* initially hidden */
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #9b4dff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.9s ease;
+  cursor: pointer;
+}
+
+.scroll-top-btn.active {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.account-dropdown {
+  position: relative;
+}
+
+.account-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  min-width: 150px;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.account-dropdown .dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Optional: smooth item hover effect */
+.account-dropdown .dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.product-gallery .main-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.product-gallery img.img-thumbnail {
+  transition: transform 0.2s ease;
+}
+
+.product-gallery img.img-thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.product-details h2 {
+  font-weight: 700;
+}
+
+.product-details h4 {
+  color: #9b4dff;
+}
+
+.product-image-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.product-hover-img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect: zoom/slide */
+.product-image-wrapper:hover .product-hover-img {
+  transform: scale(1.05) translateY(-5px); /* slightly zoom + move up */
+  cursor: pointer;
+}
+/* cart btn css */
+.btn-purple {
+  background-color: #9b4dff;
+  color: #fff;
+  border: none; /* agar border nahi chahiye */
+  width: 30%;
+}
+
+.btn-purple:hover {
+  background-color: #7a34cc; /* hover ke liye thoda dark shade */
+}
+/* shop css */ 
+/* .accordion-button {
+  border: none !important;  
+  box-shadow: none !important;  
+  background-color: #fff;  
+} */
+
+/* Remove border from accordion item wrapper */
+.accordion-item {
+  border: none !important;
+}
+
+/* When accordion is open (active state), keep same style */
+.accordion-button:not(.collapsed) {
+  border: none !important;
+  border-bottom: 1px solid #ddd;
+  box-shadow: none !important;
+  background-color: #fff;
+}
+/* Remove default accordion arrow */
+.accordion-button::after {
+  display: none !important;
+}
+
+/* X icon rotation */
+.rotate-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.rotate-icon.rotated {
+  transform: rotate(45deg);
+}
+
+/* List item hover effect */
+.hover-item {
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.hover-item:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transform: translateX(4px); /* x-axis pe 4px move karega */
+}
+.img-hover-scale {
+  transition: transform 0.3s ease; /* smooth transition applied to the image always */
+}
+
+.img-hover-scale:hover {
+  transform: scale(1.1); /* zoom in 10% only on hover */
+}
+.text-purple {
+  color: #6225d4 !important; /* Bootstrap purple shade */
+}
+.section-underline {
+  width: 100px;               /* Line ki width */
+  height: 2px;               /* Line ki thickness */
+  background-color: #000;  
+  border-radius: 50px;       /* Smooth rounded edges */
+  margin: 8px auto 0;        /* Center align and little space from heading */
+}
+.team-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(111, 66, 193, 0.6); /* Purple overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+.team-card:hover .team-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.team-overlay a {
+  transition: transform 0.2s ease;
+}
+
+.team-overlay a:hover {
+  transform: scale(1.2);
+}
+
+.team-overlay {
+  position: absolute;
+  top: 100%; /* Start completely hidden below image */
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: rgba(111, 66, 193, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.team-card:hover .team-overlay {
+  top: 40%;       /* Move to top so it covers the image */
+  opacity: 1;   /* Make it visible */
+}
+
+.team-overlay a {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .team-overlay a {
+  transform: translateY(0);
+  opacity: 1;
+}
+.team-overlay a:hover {
+  transform: translateY(0) scale(1.2); /* Slight zoom on hover */
+}
+ .custom-search-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+  max-width: 350px; /* adjust width if needed */
+}
+
+.custom-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+}
+
+.search-divider {
+  width: 1px;
+  height: 60%;
+  /* background-color: #ccc; */
+}
+
+.custom-search-btn {
+  background: transparent;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-search-btn i {
+  font-size: 1.1rem;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+/*  */
+ /* Accordion Buttons */
+.accordion-button {
+  background: #f8f9fa !important;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.5rem !important;
+  transition: background 0.3s ease;
+}
+
+.accordion-button:hover {
+  background: #e9ecef !important;
+}
+
+.accordion-item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Search Box */
+.custom-search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.custom-search-wrapper input {
+  border: 1px solid #ddd;
+  border-right: none;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.custom-search-wrapper button {
+  background: #2f4066;
+  color: white;
+  border: 1px solid #2f4066;
+  padding: 0.6rem 1rem;
+  transition: background 0.3s ease;
+}
+
+.custom-search-wrapper button:hover {
+  background: #1e2b4c;
+}
+
+/* Parent Menu Items */
+.btn.w-100 {
+  text-align: left;
+  background: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn.w-100:hover {
+  background: #f5f5f5;
+  color: #2f4066;
+}
+
+/* Submenu */
+.ps-4 {
+  background: #f9f9f9;
+  border-left: 3px solid #2f4066;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.ps-4 ul li {
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  transition: color 0.2s ease;
+}
+
+.ps-4 ul li:hover {
+  color: #2f4066;
+  font-weight: 500;
+}
+
+/* Plus / Minus Icon Styling */
+.btn .fw-bold {
+  font-size: 1.2rem;
+  color: #2f4066;
+}
+
+/* Smooth open animation */
+@keyframes slideDown {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-5px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+.blog-img-wrapper {
+  overflow: hidden;
+  border-radius: 8px; /* optional - smooth rounded corners */
+}
+
+.blog-img {
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.blog-img-wrapper:hover .blog-img {
+  transform: scale(1.05);
+}
+

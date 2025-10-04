@@ -1,0 +1,23 @@
+.login-card-body {
+  background: #eeebeb; /* light gray background */
+}
+
+.login-card-title {
+  font-weight: 700;
+  color: #333;
+}
+
+.login-link {
+  color: #9b4dff;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  background: #9b4dff;
+  color: #fff;
+  border: none;
+}
