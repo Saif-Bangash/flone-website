@@ -88,7 +88,7 @@ The optimized production build will be in the `build/` folder.
 
 You can deploy this app easily on:
 
-* [Vercel](https://vercel.com)
+* [Vercel](https://flone-website-red.vercel.app/)
 
 * [GitHub Pages](https://github.com/Saif-Bangash)
 
