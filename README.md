@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# 🚀 Converge Logics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern web application built with **React.js** and styled using **Tailwind CSS / Bootstrap 5** (choose based on what you used).
+The project demonstrates reusable components, responsive design, and scalable project structure.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📸 Screenshots
 
-### `npm start`
+### Home Page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Home Screenshot](./src/images/Screenshot%202025-10-04%20235915.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* ⚛️ React.js (Create React App)
+* 🎨 Bootstrap 5 (for styling)
+* 🔄 React Router DOM (for navigation)
+* 📦 Axios / Fetch API (for API calls)
+* 🌐 Deployed on Vercel / Netlify / GitHub Pages
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📂 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+converge-logics/
+ ┣ src/
+ ┃ ┣ components/    # Reusable components
+ ┃ ┣ pages/         # Page-level components
+ ┃ ┣ assets/        # Images, icons, etc.
+ ┃ ┣ App.js         # Main app component
+ ┃ ┗ index.js       # Entry point
+ ┣ public/          # Static assets
+ ┣ package.json
+ ┗ README.md
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ⚡ Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Responsive Layout (mobile-first design)
+* Project Section with Tabs & Filters
+* Contact Page with Form + Image Layout
+* Modern UI with re-usable components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Clone the repo:
 
-## Learn More
+```bash
+git clone https://github.com/Saif-Bangash/flone-website
+cd flone-website
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install
+```
 
-### Code Splitting
+Run development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📦 Build for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run build
+```
 
-### Advanced Configuration
+The optimized production build will be in the `build/` folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🌍 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You can deploy this app easily on:
 
-### `npm run build` fails to minify
+* [Vercel](https://vercel.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [GitHub Pages](https://github.com/Saif-Bangash)
+
+---
+
+## 👨‍💻 Author
+
+**Saif Ullah**
+Frontend Developer 🚀 | React.js Enthusiast
+
+---
